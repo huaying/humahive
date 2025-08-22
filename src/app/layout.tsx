@@ -66,9 +66,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/favicon.png",
-        width: 413,
-        height: 413,
+        url: "/og-image.png",
+        width: 963,
+        height: 504,
         alt: "HumAhive Logo",
       },
     ],
