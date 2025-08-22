@@ -26,10 +26,7 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
-  ) => {
+  const handleNavClick = () => {
     // Let browser handle navigation naturally for /#anchor links
     // This works both from same page and from other pages
     setIsMenuOpen(false);
@@ -60,7 +57,7 @@ const Navigation = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
+                onClick={handleNavClick}
                 className="nav-link"
               >
                 {item.label}
@@ -100,7 +97,7 @@ const Navigation = () => {
                   <Link
                     key={item.href}
                     href={item.href}
-                    onClick={(e) => handleNavClick(e, item.href)}
+                    onClick={handleNavClick}
                     className="block body-base py-2"
                     style={{ color: "var(--color-text-secondary)" }}
                   >

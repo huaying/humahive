@@ -100,24 +100,10 @@ export default function Gallery() {
         <div className="container">
           <div className="masonry-grid">
             {galleryConfig.map((item, index) => {
-              // Text only block
-              if (item.text && !item.images) {
-                return (
-                  <div key={index} className="masonry-item masonry-item-text">
-                    <div
-                      className="p-6 rounded-2xl"
-                      style={{ backgroundColor: "var(--orange-50)" }}
-                    >
-                      <p className="body-lg leading-relaxed">{item.text}</p>
-                    </div>
-                  </div>
-                );
-              }
-
               // Images (single or multiple)
               if (item.images && item.images.length > 0) {
                 const isMultipleImages = item.images.length > 1;
-                const hasText = item.title || item.description;
+                const hasText = item.description;
 
                 return (
                   <div
@@ -150,9 +136,7 @@ export default function Gallery() {
                           >
                             <Image
                               src={`/images/${imageName}`}
-                              alt={`${item.title || "Gallery image"} ${
-                                imgIndex + 1
-                              }`}
+                              alt={`Gallery image ${imgIndex + 1}`}
                               width={400}
                               height={300}
                               className="w-full h-64 object-cover"
@@ -168,7 +152,7 @@ export default function Gallery() {
                       >
                         <Image
                           src={`/images/${item.images[0]}`}
-                          alt={item.title || "Gallery image"}
+                          alt="Gallery image"
                           width={400}
                           height={300}
                           className="w-full h-64 object-cover"
@@ -179,9 +163,6 @@ export default function Gallery() {
                     {/* Text content */}
                     {hasText && (
                       <div>
-                        {item.title && (
-                          <h3 className="heading-3 mb-4">{item.title}</h3>
-                        )}
                         {item.description && (
                           <p className="body-base">{item.description}</p>
                         )}
