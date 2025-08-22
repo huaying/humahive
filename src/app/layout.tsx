@@ -67,8 +67,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/favicon.png",
-        width: 424,
-        height: 424,
+        width: 413,
+        height: 413,
         alt: "HumAhive Logo",
       },
     ],

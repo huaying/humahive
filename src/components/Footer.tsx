@@ -24,8 +24,8 @@ const Footer = () => {
               <Image
                 src="/logo.png"
                 alt="HumAhive Logo"
-                width={424}
-                height={385}
+                width={413}
+                height={384}
                 className="w-12"
               />
               <span
