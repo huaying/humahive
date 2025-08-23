@@ -151,7 +151,7 @@ export default function Home() {
               {
                 title: "Support for Disabilities, Widows & Orphans",
                 description:
-                  "We provide training, counseling, and community support to make sure that no one is left behind, regardless of their physical or social circumstances",
+                  "We provide training, counseling, and community support to make sure that no one is left behind, regardless of their physical or social circumstances.",
                 participants: "Community members supported",
                 image: "eyeexam-01.jpg",
               },
@@ -374,7 +374,7 @@ export default function Home() {
               <p className="body-xl max-w-3xl mx-auto">
                 HumAhive thrives on the support of individuals and organizations
                 who share our vision. Together, we can create lasting change for
-                vulnerable and marginalized communities
+                vulnerable and marginalized communities.
               </p>
             </div>
 
@@ -530,7 +530,7 @@ export default function Home() {
               style={{ color: "var(--orange-700)" }}
             >
               Every contribution creates lasting change in the lives of
-              vulnerable communities in Kakuma refugee camp
+              vulnerable communities in Kakuma refugee camp.
             </p>
 
             <div className="flex flex-col md:flex-row gap-6 justify-center">
