@@ -34,9 +34,9 @@ export default function Home() {
 
               {/* Description */}
               <p className="body-xl max-w-lg">
-                Find unique programs and transformative stories that empower
-                vulnerable communities in Kakuma refugee camp. Experience the
-                incredible impact of education, empowerment, and hope.
+                Explore unique programs and inspiring stories that empower
+                vulnerable communities in Kakuma Refugee Camp. Experience the
+                life-changing impact of education, empowerment, and hope.
               </p>
             </div>
 
@@ -97,12 +97,12 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="display-2 mb-12">Who We Are</h2>
             <p className="body-xl leading-relaxed mb-8">
-              HumAhive is a nonprofit organization based in Kakuma refugee camp,
-              Kenya, dedicated to supporting vulnerable communities through
-              education, livelihood training, and social empowerment. We focus
-              on helping people with disabilities, widows, orphans, and young
-              women, while also addressing critical challenges like poverty,
-              early child marriage, and environmental degradation.
+              HumAhive is a nonprofit organization based in Kakuma Refugee Camp,
+              Kenya. We support vulnerable communities through education,
+              livelihood training, and social empowerment. We focus on helping
+              people with disabilities, widows, orphans, and young women, while
+              also addressing critical challenges such as poverty, early
+              marriage, and environmental degradation.
             </p>
             <p className="body-xl leading-relaxed text-primary-dark font-medium">
               Our work is rooted in compassion, inclusivity, and innovation —
@@ -119,9 +119,9 @@ export default function Home() {
           <div className="text-center mb-20">
             <h2 className="display-2 mb-8">Our Programs</h2>
             <p className="body-xl max-w-3xl mx-auto">
-              Five comprehensive programs supporting education, women&apos;s
+              We run five core programs that focus on education, women&apos;s
               empowerment, child protection, disability inclusion, and
-              environmental conservation
+              environmental conservation.
             </p>
           </div>
 
@@ -144,14 +144,14 @@ export default function Home() {
               {
                 title: "Early Child Marriage Prevention Project",
                 description:
-                  "We work with girls aged 12–17 to raise awareness about the dangers of early marriage, encourage school retention, and prepare them for future careers.",
+                  "We work with girls aged 12–17 to raise awareness about the dangers of early marriage, encourage them to stay in school, and support their aspirations for future careers.",
                 participants: "Girls aged 12-17",
                 image: "early-marriage-02.jpg",
               },
               {
                 title: "Support for Disabilities, Widows & Orphans",
                 description:
-                  "We provide training, counseling, and community support to ensure that no one is left behind, regardless of their physical or social circumstances.",
+                  "We provide training, counseling, and community support to make sure that no one is left behind, regardless of their physical or social circumstances",
                 participants: "Community members supported",
                 image: "eyeexam-01.jpg",
               },
@@ -356,7 +356,7 @@ export default function Home() {
                   ></div>
                   <p className="body-lg">
                     <strong>Built strong partnerships</strong> with local
-                    leaders, church leaders, NGOs, and community groups.
+                    leaders, faith organizations, NGOs, and community groups.
                   </p>
                 </div>
               </div>
@@ -372,10 +372,9 @@ export default function Home() {
             <div className="text-center mb-16">
               <h2 className="display-2 mb-8">Get Involved</h2>
               <p className="body-xl max-w-3xl mx-auto">
-                HumAhive thrives through the support of individuals and
-                organizations who share our vision. You can help us create
-                lasting change for vulnerable groups and marginalized
-                communities.
+                HumAhive thrives on the support of individuals and organizations
+                who share our vision. Together, we can create lasting change for
+                vulnerable and marginalized communities
               </p>
             </div>
 
