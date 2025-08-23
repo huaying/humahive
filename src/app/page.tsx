@@ -203,7 +203,7 @@ export default function Home() {
               <p className="body-lg">
                 Founded by community members who have experienced the challenges
                 of displacement firsthand, HumAhive was created to respond to
-                the urgent needs of marginalized people in Kakuma refugee camp.
+                the urgent needs of marginalized people in Kakuma Refugee Camp.
                 We are driven by the belief that lasting change begins with
                 education, skills, and dignity.
               </p>
@@ -530,7 +530,7 @@ export default function Home() {
               style={{ color: "var(--orange-700)" }}
             >
               Every contribution creates lasting change in the lives of
-              vulnerable communities in Kakuma refugee camp.
+              vulnerable communities in Kakuma Refugee Camp.
             </p>
 
             <div className="flex flex-col md:flex-row gap-6 justify-center">

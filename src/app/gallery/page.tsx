@@ -89,7 +89,7 @@ export default function Gallery() {
             <h1 className="display-1 mb-8">Stories & Gallery</h1>
             <p className="body-xl max-w-3xl mx-auto">
               Discover the transformative impact of our work through real
-              stories and moments from our community
+              stories and moments from our community.
             </p>
           </div>
         </div>
