@@ -60,59 +60,28 @@ const Footer = () => {
           {/* Links & Social */}
           <div className="space-y-8">
             <div>
-              <h3 className="heading-4 mb-6">
+              <h3 className="heading-4 mb-4">
                 Quick Links
               </h3>
-              <div className="grid grid-cols-2 gap-6">
-                <ul className="space-y-3">
-                  <li>
-                    <Link
-                      href="/#programs"
-                      className="footer-link body-base"
-                    >
-                      Programs
+              <ul className="footer-links">
+                {[
+                  { href: "/#programs", label: "Programs" },
+                  { href: "/#about", label: "About" },
+                  { href: "/#achievements", label: "Achievements" },
+                  { href: "/#get-involved", label: "Get Involved" },
+                  { href: "/gallery", label: "Gallery" },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="footer-link body-base">
+                      {link.label}
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      href="/#about"
-                      className="footer-link body-base"
-                    >
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/#achievements"
-                      className="footer-link body-base"
-                    >
-                      Achievements
-                    </Link>
-                  </li>
-                </ul>
-                <ul className="space-y-3">
-                  <li>
-                    <Link
-                      href="/#get-involved"
-                      className="footer-link body-base"
-                    >
-                      Get Involved
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/gallery"
-                      className="footer-link body-base"
-                    >
-                      Gallery
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+                ))}
+              </ul>
             </div>
 
             <div>
-              <h3 className="heading-4 mb-6">
+              <h3 className="heading-4 mb-4">
                 Get in Touch
               </h3>
               <div className="flex space-x-4">

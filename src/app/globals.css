@@ -654,6 +654,27 @@ button:disabled {
   overflow-wrap: anywhere;
 }
 
+/* Quick links: one list laid out in aligned rows (3 per column). */
+.footer-links {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column;
+  justify-content: start;
+  column-gap: var(--spacing-10);
+}
+
+.footer-links .footer-link {
+  white-space: nowrap;
+}
+
+/* Tablet: the footer link column is narrow, so stack the links. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer-links {
+    grid-template-rows: none;
+    grid-auto-flow: row;
+  }
+}
+
 .footer-link {
   display: inline-flex;
   align-items: center;
