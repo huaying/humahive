@@ -96,9 +96,11 @@ humahive/
 
 To add new photos to the gallery:
 
-1. Add image files to `/public/images/`
-2. Update the `galleryConfig` array in `/src/app/gallery/page.tsx`
-3. Include appropriate descriptions for accessibility
+1. Add image files to `/public/images/` (new gallery uploads live in `/public/images/gallery/`).
+2. Add each photo to the matching topic in `/src/app/gallery/media.ts`, including its width, height, and descriptive alt text. Photos display at their original aspect ratio and open in the lightbox. Place newer uploads before older photos within each topic, and keep topics with new photos at the top.
+3. For videos, use `provider: "youtube"` with a `youtubeId`, or `provider: "file"` with an MP4 `src` under `/public/videos/` and a poster image under `/public/images/gallery/`. Include the video title, description, and duration. Gallery videos belong in the topic's `videos` array. YouTube players display immediately with the thumbnail managed on YouTube, without autoplay. Local MP4 videos load after the visitor presses play.
+
+Video metadata lives in `/src/data/videos.ts`: the founder/community film uses a direct YouTube embed and is paired with Who We Are immediately below the homepage hero. Yvonne's YouTube interview leads the gallery, followed by the Child marriage prevention photo topic. Update both videos' thumbnails in YouTube Studio. Videos remain associated with their topics in the data and are displayed before the photo sections.
 
 ## 🌐 Deployment
 

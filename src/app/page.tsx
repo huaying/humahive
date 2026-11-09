@@ -1,4 +1,7 @@
 import Link from "next/link";
+import styles from "./page.module.css";
+import VideoCard from "@/components/VideoCard";
+import { communityVideo } from "@/data/videos";
 import Image from "next/image";
 import { Users, Heart, Globe, MapPin, Camera } from "lucide-react";
 
@@ -24,29 +27,30 @@ export default function Home() {
               </div>
 
               {/* Main Title */}
-              <h1 className="display-1">
-                Discover the
+              <h1 className={`display-1 ${styles.heroTitle}`}>
+                Education,
                 <br />
-                World&apos;s <span className="text-primary">Hidden</span>
+                opportunity,
                 <br />
-                Wonders
+                and hope in <span className={styles.heroAccent}>Kakuma.</span>
               </h1>
 
-              {/* Description */}
               <p className="body-xl max-w-lg">
-                Explore unique programs and inspiring stories that empower
-                vulnerable communities in Kakuma Refugee Camp. Experience the
-                life-changing impact of education, empowerment, and hope.
+                Together with refugee and host communities, we create
+                opportunities to learn, build livelihoods, and shape a future
+                with dignity.
               </p>
             </div>
 
             {/* Right: Photo Gallery */}
             <div className="relative">
               {/* Main large image */}
-              <div className="w-full h-95 rounded-2xl overflow-hidden mb-0 lg:mb-4 relative">
+              <div className="w-full aspect-[20/9] rounded-2xl overflow-hidden relative">
                 <Image
-                  src="/images/kids8-11-05.jpg"
-                  alt="Education in Action - Children Learning Together"
+                  src="/images/gallery/campaign-group-01.jpg"
+                  alt="Community members campaigning together against child marriage"
+                  priority
+                  sizes="(max-width: 767px) 100vw, 50vw"
                   fill
                   className="object-cover"
                 />
@@ -54,19 +58,21 @@ export default function Home() {
 
               {/* Bottom two smaller images */}
               <div className="grid grid-cols-2 gap-4 mt-4">
-                <div className="w-full h-40 rounded-2xl overflow-hidden relative">
+                <div className="w-full aspect-[20/9] rounded-2xl overflow-hidden relative">
                   <Image
-                    src="/images/humahive-03.jpg"
-                    alt="Women Training Workshop"
+                    src="/images/gallery/school-community-01.jpg"
+                    alt="Schoolchildren gathered in front of a HumAhive banner"
+                    sizes="(max-width: 767px) 50vw, 25vw"
                     fill
                     className="object-cover"
                   />
                 </div>
 
-                <div className="w-full h-40 rounded-2xl overflow-hidden relative">
+                <div className="w-full aspect-[20/9] rounded-2xl overflow-hidden relative">
                   <Image
-                    src="/images/business-01.jpg"
-                    alt="Green Initiative - Environmental Conservation"
+                    src="/images/gallery/campaign-participant-02.jpg"
+                    alt="A young participant displaying a campaign marker"
+                    sizes="(max-width: 767px) 50vw, 25vw"
                     fill
                     className="object-cover"
                   />
@@ -91,23 +97,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Introduction Section */}
-      <section className="section bg-soft">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="display-2 mb-12">Who We Are</h2>
-            <p className="body-xl leading-relaxed mb-8">
+      {/* Introduction and Community Video */}
+      <section
+        id="community-voices"
+        className="section bg-soft"
+        aria-labelledby="who-we-are-title"
+      >
+        <div className={`container ${styles.introduction}`}>
+          <div className={styles.introductionText}>
+            <h2 id="who-we-are-title" className="display-2">
+              Who We Are
+            </h2>
+            <p className="body-lg">
               HumAhive is a nonprofit organization based in Kakuma Refugee Camp,
-              Kenya. We support vulnerable communities through education,
-              livelihood training, and social empowerment. We focus on helping
-              people with disabilities, widows, orphans, and young women, while
-              also addressing critical challenges such as poverty, early
-              marriage, and environmental degradation.
+              Kenya. Through education, livelihood training, and social support,
+              we help children, women, and vulnerable community members build
+              self-reliant lives.
             </p>
-            <p className="body-xl leading-relaxed text-primary-dark font-medium">
-              Our work is rooted in compassion, inclusivity, and innovation —
-              building a future where every individual, regardless of
-              background, has the opportunity to thrive.
+            <p className={`body-lg ${styles.introductionMessage}`}>
+              A safe childhood. The chance to learn. A future with dignity.
+            </p>
+          </div>
+          <div className={styles.communityFilm}>
+            <h3 className="heading-2">
+              Peace is a paradise
+            </h3>
+            <VideoCard video={communityVideo} showCaption={false} />
+            <p className="body-base">
+              Hear from our founder, Tangi Jerome, and community members about
+              the hopes behind HumAhive&apos;s work in Kakuma.
             </p>
           </div>
         </div>

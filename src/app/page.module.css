@@ -1,0 +1,40 @@
+.heroTitle {
+  font-size: clamp(2.25rem, 4.5vw, var(--font-size-6xl));
+}
+
+.heroAccent {
+  color: var(--color-orange-900);
+}
+
+.introduction {
+  display: grid;
+  gap: var(--spacing-10);
+  align-items: center;
+}
+
+.introductionText,
+.communityFilm {
+  min-width: 0;
+  display: grid;
+  gap: var(--spacing-6);
+}
+
+.introductionText h2 {
+  font-size: clamp(2rem, 4vw, var(--font-size-5xl));
+}
+
+.introductionMessage {
+  font-weight: 600;
+  color: var(--color-orange-900);
+}
+
+.communityFilm h3 {
+  font-size: clamp(1.5rem, 2.5vw, var(--font-size-3xl));
+}
+
+@media (min-width: 1024px) {
+  .introduction {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--spacing-16);
+  }
+}
