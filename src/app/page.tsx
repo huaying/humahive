@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import VideoCard from "@/components/VideoCard";
 import { communityVideo } from "@/data/videos";
+import { donationUrl } from "@/data/links";
 import Image from "next/image";
 import { Users, Heart, Globe, MapPin, Camera } from "lucide-react";
 
@@ -437,21 +438,31 @@ export default function Home() {
                 <div>
                   <h3 className="heading-2 mb-4">Donate</h3>
                   <p className="body-base">
-                    Contribute financially or in-kind to sustain our work.
+                    Support English teachers in Kakuma with classroom supplies
+                    through GoFundMe.
                   </p>
+                  <a
+                    href={donationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Donate on GoFundMe (opens in a new tab)"
+                    className="btn btn-primary btn-sm mt-6"
+                  >
+                    Donate on GoFundMe
+                  </a>
                 </div>
               </div>
             </div>
 
             <div className="text-center">
               <p className="body-lg font-medium mb-6 text-primary-dark">
-                Contact us to learn how you can be part of our mission.
+                Interested in volunteering, partnering, or contributing in-kind?
               </p>
               <a
                 href="mailto:humanafricanhive@gmail.com?subject=Get Involved with HumAhive"
-                className="btn btn-primary btn-lg"
+                className="btn btn-secondary btn-lg"
               >
-                Start Your Journey with Us
+                Contact Us
               </a>
             </div>
           </div>
@@ -547,16 +558,19 @@ export default function Home() {
               className="body-xl mb-12 max-w-2xl mx-auto"
               style={{ color: "var(--orange-700)" }}
             >
-              Every contribution creates lasting change in the lives of
-              vulnerable communities in Kakuma Refugee Camp.
+              Help equip volunteer English teachers in Kakuma with the
+              classroom supplies they need.
             </p>
 
             <div className="flex flex-col md:flex-row gap-6 justify-center">
               <a
-                href="mailto:humanafricanhive@gmail.com?subject=Support Inquiry"
+                href={donationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Donate on GoFundMe (opens in a new tab)"
                 className="btn btn-lg btn-primary"
               >
-                Support Now
+                Donate on GoFundMe
               </a>
               <Link href="/gallery" className="btn btn-secondary btn-lg">
                 <Camera size={20} className="mr-2" />

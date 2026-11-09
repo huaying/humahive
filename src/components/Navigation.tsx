@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+import { donationUrl } from "@/data/links";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,9 +32,6 @@ const Navigation = () => {
     // This works both from same page and from other pages
     setIsMenuOpen(false);
   };
-
-  const supportMailto =
-    "mailto:humanafricanhive@gmail.com?subject=Support HumAhive&body=Dear HumAhive Team,%0D%0A%0D%0AI would like to support your work in Kakuma refugee camp.%0D%0A%0D%0APlease provide information about how to contribute.%0D%0A%0D%0AThank you.%0D%0A%0D%0ABest regards";
 
   return (
     <nav className={`nav ${isScrolled ? "nav-scrolled" : ""}`}>
@@ -65,19 +63,24 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Support Button */}
+          {/* Donation Button */}
           <div className="hidden md:block">
             <a
-              href={supportMailto}
+              href={donationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Donate on GoFundMe (opens in a new tab)"
               className="btn btn-primary btn-sm nav-support-btn"
             >
-              Support
+              Donate
             </a>
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
             className="md:hidden p-2"
             style={{ color: "var(--color-text-secondary)" }}
           >
@@ -105,11 +108,14 @@ const Navigation = () => {
                   </Link>
                 ))}
                 <a
-                  href={supportMailto}
+                  href={donationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Donate on GoFundMe (opens in a new tab)"
                   onClick={() => setIsMenuOpen(false)}
                   className="w-full btn btn-primary mt-4"
                 >
-                  Support
+                  Donate
                 </a>
               </div>
             </div>
