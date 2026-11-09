@@ -7,7 +7,7 @@ export default function NotFound() {
       className="section"
       style={{ minHeight: "80vh", display: "flex", alignItems: "center" }}
     >
-      <div className="container">
+      <div className="page-container">
         <div className="max-w-2xl mx-auto text-center">
           <h1
             className="display-1 mb-8"

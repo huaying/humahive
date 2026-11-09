@@ -59,7 +59,7 @@ const Navigation = () => {
 
   return (
     <nav aria-label="Main navigation" className={`nav ${isScrolled ? "nav-scrolled" : ""}`}>
-      <div className="container">
+      <div className="page-container">
         <div className="nav-content">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
@@ -121,7 +121,7 @@ const Navigation = () => {
             id="mobile-navigation"
             className="nav-mobile lg:hidden"
           >
-            <div className="container py-8">
+            <div className="page-container py-8">
               <div className="space-y-6">
                 {navItems.map((item) => (
                   <Link

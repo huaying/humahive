@@ -92,7 +92,7 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section id="home" className={`section ${styles.hero}`}>
-        <div className="container">
+        <div className="page-container">
           <div className={styles.heroGrid}>
             {/* Left: Text Content */}
             <div className="space-y-8">
@@ -131,33 +131,33 @@ export default function Home() {
 
             {/* Right: Photo collage */}
             <div className={styles.heroMedia}>
-              <div className="w-full aspect-[20/9] media-rounded relative">
+              <div className="w-full aspect-video media-rounded relative">
                 <Image
                   src="/images/gallery/campaign-group-01.jpg"
                   alt="Community members campaigning together against child marriage"
                   priority
-                  sizes="(max-width: 1023px) 100vw, 55vw"
+                  sizes="(max-width: 767px) 100vw, 55vw"
                   fill
                   className="object-cover"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4 mt-4">
-                <div className="w-full aspect-[20/9] media-rounded relative">
+                <div className="w-full aspect-video media-rounded relative">
                   <Image
                     src="/images/gallery/school-community-01.jpg"
                     alt="Schoolchildren gathered in front of a HumAhive banner"
-                    sizes="(max-width: 1023px) 50vw, 28vw"
+                    sizes="(max-width: 767px) 50vw, 28vw"
                     fill
                     className="object-cover"
                   />
                 </div>
 
-                <div className="w-full aspect-[20/9] media-rounded relative">
+                <div className="w-full aspect-video media-rounded relative">
                   <Image
                     src="/images/gallery/campaign-participant-02.jpg"
                     alt="A young participant displaying a campaign marker"
-                    sizes="(max-width: 1023px) 50vw, 28vw"
+                    sizes="(max-width: 767px) 50vw, 28vw"
                     fill
                     className="object-cover"
                   />
@@ -174,7 +174,7 @@ export default function Home() {
         className="section bg-soft"
         aria-labelledby="who-we-are-title"
       >
-        <div className={`container ${styles.introduction}`}>
+        <div className={`page-container ${styles.introduction}`}>
           <div className={styles.introductionText}>
             <h2 id="who-we-are-title" className="display-2">
               Who We Are
@@ -202,7 +202,7 @@ export default function Home() {
 
       {/* Programs Section */}
       <section id="programs" className="section-lg">
-        <div className="container">
+        <div className="page-container">
           <header className={styles.splitHeader}>
             <h2 className="display-2">Our Programs</h2>
             <p className="body-xl">
@@ -244,14 +244,14 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="section-lg bg-soft" aria-labelledby="about-title">
-        <div className="container">
+        <div className="page-container">
           <div className={styles.aboutGrid}>
             <div className={`media-rounded relative ${styles.aboutImage}`}>
               <Image
                 src="/images/volunteers-01.jpg"
                 alt="HumAhive volunteers and community members together"
                 fill
-                sizes="(max-width: 1023px) 100vw, 50vw"
+                sizes="(max-width: 767px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -298,7 +298,7 @@ export default function Home() {
         className="section-lg bg-accent"
         aria-labelledby="achievements-title"
       >
-        <div className="container">
+        <div className="page-container">
           <h2 id="achievements-title" className="display-2 mb-12">
             Our Achievements
           </h2>
@@ -324,7 +324,7 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="section-lg bg-soft" aria-labelledby="testimonials-title">
-        <div className="container">
+        <div className="page-container">
           <h2 id="testimonials-title" className="display-2 mb-12">
             Testimonials
           </h2>
@@ -351,7 +351,7 @@ export default function Home() {
         className="section-lg"
         aria-labelledby="get-involved-title"
       >
-        <div className={`container ${styles.involvement}`}>
+        <div className={`page-container ${styles.involvement}`}>
           <div className={styles.appeal}>
             <p className="eyebrow">Get Involved</p>
             <h2 id="get-involved-title" className="display-2">

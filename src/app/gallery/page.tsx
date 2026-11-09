@@ -18,7 +18,7 @@ export default function Gallery() {
   return (
     <div>
       <section className="section bg-soft">
-        <div className="container">
+        <div className="page-container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="display-1 mb-8">Stories &amp; Gallery</h1>
             <p className="body-xl max-w-3xl mx-auto">
@@ -36,7 +36,7 @@ export default function Gallery() {
         </div>
       </section>
 
-      <div className={`container ${styles.groups}`}>
+      <div className={`page-container ${styles.groups}`}>
         {allVideos.map((video) => (
           <section
             key={video.provider === "youtube" ? video.youtubeId : video.src}

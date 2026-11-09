@@ -5,7 +5,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer className="site-footer">
-      <div className="container section-sm">
+      <div className="page-container section-sm">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Organization Info */}
           <div className="md:col-span-2">
