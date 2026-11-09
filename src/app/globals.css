@@ -71,6 +71,7 @@
   --color-border: var(--color-neutral-200);
   --color-border-accent: var(--color-orange-200);
   --color-control-border: var(--color-primary-text);
+  --color-surface: #FFFFFF;            /* Cards that sit on a soft section */
 
   /* Spacing tokens mapped to Tailwind spacing scale */
   --spacing-1: 4px;   /* space-1 */
@@ -516,15 +517,29 @@ button:disabled {
   overflow: hidden;
 }
 
+/* Small label above a section title, e.g. "Get Involved". */
+.eyebrow {
+  display: block;
+  font-family: var(--font-source-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-text);
+}
+
+/* Left-aligned section header: eyebrow, title, optional lead paragraph. */
+.section-header {
+  display: grid;
+  gap: var(--spacing-4);
+  max-width: 48rem;
+  margin-bottom: var(--spacing-12);
+}
+
 .quote-card {
   border-radius: var(--radius-2xl);
 }
 
-.mission-card {
-  border-radius: var(--radius-lg);
-  border-inline-start: var(--spacing-1) solid var(--color-primary);
-  background-color: var(--color-background-soft);
-}
 
 /* Cards */
 .card {

@@ -23,6 +23,19 @@ The existing orange scale remains available for decorative palette work.
 | Accent surface | `--color-background-accent` | `#FFE0B2` |
 | Emphasis surface | `--color-background-emphasis` | `#FFCC9C` |
 
+| Card on soft section | `--color-surface` | `#FFFFFF` |
+
+### Section rhythm
+
+Alternate page and soft backgrounds. Use the accent surface (`bg-accent`) for
+one emphasis band per page (the impact numbers), and white `--color-surface`
+cards to lift content off a soft section (mission cards, the donation appeal).
+Dark bands were tried and rejected as too heavy for the warm palette; the
+primary orange button should always sit on a light surface.
+
+Section headers are left-aligned. Use `.eyebrow` for a small uppercase label
+above a title, and `.section-header` to stack eyebrow, title and lead.
+
 White text on the primary action has a calculated contrast ratio of 5.13:1.
 Accent text uses its own darker role so it also works on orange-tinted surfaces.
 Use primary or secondary text on the emphasis surface; muted text is intended
@@ -63,7 +76,7 @@ Third-party YouTube and lightbox UI retain their own internal styling.
 - All spacing uses the existing `--spacing-*` scale.
 - Actions use `--radius-md` (8px), media uses `--radius-lg` (12px), quote cards
   use `--radius-2xl` (24px), and pills use `--radius-full`.
-- Use `media-rounded`, `quote-card`, `badge`, and `mission-card` where applicable.
+- Use `media-rounded`, `quote-card`, and `badge` where applicable.
 
 Shared styles are in Tailwind's `components` cascade layer. Tailwind utilities
 can therefore intentionally adjust layout and font weight. Keep component CSS

@@ -10,32 +10,62 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border: 0;
+  padding: 0;
   border-radius: var(--radius-lg);
   background: var(--color-neutral-900);
   cursor: pointer;
 }
 
 .posterImage {
-  object-fit: contain;
+  object-fit: cover;
+  transition: transform 400ms ease;
 }
 
+.posterShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(0 0 0 / 35%), transparent 45%);
+}
+
+/* Bottom-left so it never covers a speaker's face or name caption. */
 .playButton {
   position: absolute;
-  left: var(--spacing-3);
-  bottom: var(--spacing-3);
+  left: var(--spacing-4);
+  bottom: var(--spacing-4);
   display: flex;
   align-items: center;
-  gap: var(--spacing-2);
-  padding: var(--spacing-2) var(--spacing-3);
-  border-radius: var(--radius-xl);
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  padding-left: 3px; /* optically centre the triangle */
+  border-radius: var(--radius-full);
   background: var(--color-primary);
   color: var(--color-on-primary);
-  white-space: nowrap;
+  box-shadow: 0 0 0 6px rgb(255 255 255 / 30%);
+  transition: background-color var(--motion-fast) ease,
+    transform var(--motion-fast) ease;
+}
+
+.duration {
+  position: absolute;
+  left: calc(var(--spacing-4) + 56px + var(--spacing-3));
+  bottom: calc(var(--spacing-4) + 16px);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-sm);
+  background: rgb(0 0 0 / 70%);
+  color: var(--color-neutral-0);
   font-size: var(--font-size-xs);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
 .videoPoster:hover .playButton {
   background: var(--color-primary-hover);
+  transform: scale(1.06);
+}
+
+.videoPoster:hover .posterImage {
+  transform: scale(1.02);
 }
 
 .video {
@@ -45,10 +75,6 @@
   border: 0;
   border-radius: var(--radius-lg);
   background: var(--color-neutral-900);
-}
-
-.youtubeFrame {
-  min-height: 200px;
 }
 
 .videoCaption {

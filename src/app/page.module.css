@@ -1,6 +1,31 @@
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-top: var(--spacing-12);
+}
+
+.heroGrid {
+  display: grid;
+  gap: var(--spacing-12);
+  align-items: center;
+}
+
 .heroAccent {
   color: var(--color-primary-text);
 }
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.heroMedia {
+  position: relative;
+  min-width: 0;
+}
+
+/* ---------- Who we are + film ---------- */
 
 .introduction {
   display: grid;
@@ -16,54 +41,305 @@
 }
 
 .introductionMessage {
-  font-weight: 600;
+  padding-inline-start: var(--spacing-4);
+  border-inline-start: var(--spacing-1) solid var(--color-primary);
+  font-family: var(--font-merriweather);
+  font-size: var(--font-size-xl);
+  font-style: italic;
+  line-height: var(--line-height-snug);
   color: var(--color-primary-text);
 }
 
-.involvementHeader {
+/* ---------- Shared split header (title left, lead right) ---------- */
+
+.splitHeader {
   display: grid;
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-12);
+}
+
+/* ---------- Programs ---------- */
+
+.programGrid {
+  display: grid;
+  gap: var(--spacing-12) var(--spacing-8);
+}
+
+.programCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: var(--spacing-4);
-  max-width: 48rem;
-  margin-bottom: var(--spacing-10);
+  min-width: 0;
 }
 
-.involvementLabel {
-  color: var(--color-primary-text);
-  font-weight: 600;
-  font-size: var(--font-size-sm);
+.programImage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: var(--spacing-2);
 }
 
-.involvementStory {
+.programBadge {
+  margin-top: auto;
+  font-size: var(--font-size-xs);
+}
+
+/* ---------- About ---------- */
+
+.aboutGrid {
   display: grid;
   gap: var(--spacing-10);
   align-items: center;
 }
 
-.involvementFilm,
-.involvementAppeal {
+.aboutImage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+}
+
+.aboutText {
   display: grid;
-  gap: var(--spacing-4);
+  gap: var(--spacing-6);
   min-width: 0;
 }
 
-.donationButton {
-  justify-self: start;
-  max-width: 100%;
-  margin-top: var(--spacing-2);
+.principles {
+  display: grid;
+  gap: var(--spacing-10);
+  margin-top: var(--spacing-16);
 }
 
-.involvementLink {
-  justify-self: start;
+.principle {
+  display: grid;
+  align-content: start;
+  gap: var(--spacing-4);
+  padding-top: var(--spacing-6);
+  border-top: 2px solid var(--color-primary);
+}
+
+.principleText {
+  font-family: var(--font-merriweather);
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+}
+
+/* ---------- Impact band ---------- */
+
+.statRow {
+  display: grid;
+  gap: var(--spacing-8);
+  margin: 0 0 var(--spacing-12);
+  padding-bottom: var(--spacing-12);
+  border-bottom: 1px solid var(--color-border-accent);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--spacing-2);
+}
+
+.statValue {
+  margin: 0;
+  font-family: var(--font-merriweather);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary-text);
+}
+
+.statLabel {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+}
+
+.achievementList {
+  display: grid;
+  gap: var(--spacing-6) var(--spacing-12);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.achievementList li {
+  position: relative;
+  padding-inline-start: var(--spacing-8);
+}
+
+.achievementList li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.7em;
+  width: var(--spacing-4);
+  height: 2px;
+  background: var(--color-primary);
+}
+
+.achievementList strong {
+  color: var(--color-text-primary);
+}
+
+/* ---------- Testimonials ---------- */
+
+.quote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  margin: 0;
+  padding: var(--spacing-10) var(--spacing-8) var(--spacing-8);
+  background-color: var(--color-surface);
+}
+
+.quoteMark {
+  font-family: var(--font-merriweather);
+  font-size: 5rem;
+  line-height: 0.6;
+  color: var(--color-primary);
+}
+
+.quoteText {
+  margin: 0;
+  font-family: var(--font-merriweather);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+}
+
+.quoteAuthor {
+  margin-top: auto;
+  padding-top: var(--spacing-4);
+  border-top: 1px solid var(--color-border-accent);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary-text);
+}
+
+/* ---------- Get involved ---------- */
+
+.involvement {
+  display: grid;
+  gap: var(--spacing-12);
+  align-items: center;
+}
+
+.appeal {
+  display: grid;
+  gap: var(--spacing-5);
+  min-width: 0;
+  max-width: 40rem; /* keep body lines at a comfortable reading length */
+}
+
+.appealTitle {
+  margin-top: var(--spacing-4);
+  color: var(--color-primary-text);
+}
+
+.appealAction {
+  display: grid;
+  justify-items: start;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-3);
+}
+
+.story {
+  display: grid;
+  gap: var(--spacing-5);
+  min-width: 0;
+}
+
+.storyCaption {
+  display: grid;
+  justify-items: start;
+  gap: var(--spacing-2);
+}
+
+/* ---------- Breakpoints ---------- */
+
+@media (min-width: 768px) {
+  .programGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .programCard:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  /* A lone full-width card gets a wide crop so its photo doesn't tower. */
+  .programCard:last-child:nth-child(odd) .programImage {
+    aspect-ratio: 21 / 9;
+  }
+
+  .statRow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .stat + .stat {
+    padding-inline-start: var(--spacing-8);
+    border-inline-start: 1px solid var(--color-border-accent);
+  }
+
+  .achievementList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .principles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-16);
+  }
 }
 
 @media (min-width: 1024px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: var(--spacing-16);
+  }
+
   .introduction {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     gap: var(--spacing-16);
   }
 
-  .involvementStory {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  .splitHeader {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    align-items: end;
+    gap: var(--spacing-16);
+  }
+
+  .programGrid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .programCard {
+    grid-column: span 2;
+  }
+
+  .programCard.programFeatured {
+    grid-column: span 3;
+  }
+
+  .programCard:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+
+  .programCard:last-child:nth-child(odd) .programImage {
+    aspect-ratio: 4 / 3;
+  }
+
+  .programFeatured .programImage {
+    aspect-ratio: 16 / 10;
+  }
+
+  .aboutGrid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: var(--spacing-16);
+  }
+
+  /* Appeal leads; the low-resolution interview video sits slightly smaller. */
+  .involvement {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
     gap: var(--spacing-16);
   }
 }
