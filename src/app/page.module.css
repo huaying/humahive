@@ -1,9 +1,5 @@
-.heroTitle {
-  font-size: clamp(2.25rem, 4.5vw, var(--font-size-6xl));
-}
-
 .heroAccent {
-  color: var(--color-orange-900);
+  color: var(--color-primary-text);
 }
 
 .introduction {
@@ -19,22 +15,55 @@
   gap: var(--spacing-6);
 }
 
-.introductionText h2 {
-  font-size: clamp(2rem, 4vw, var(--font-size-5xl));
-}
-
 .introductionMessage {
   font-weight: 600;
-  color: var(--color-orange-900);
+  color: var(--color-primary-text);
 }
 
-.communityFilm h3 {
-  font-size: clamp(1.5rem, 2.5vw, var(--font-size-3xl));
+.involvementHeader {
+  display: grid;
+  gap: var(--spacing-4);
+  max-width: 48rem;
+  margin-bottom: var(--spacing-10);
+}
+
+.involvementLabel {
+  color: var(--color-primary-text);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.involvementStory {
+  display: grid;
+  gap: var(--spacing-10);
+  align-items: center;
+}
+
+.involvementFilm,
+.involvementAppeal {
+  display: grid;
+  gap: var(--spacing-4);
+  min-width: 0;
+}
+
+.donationButton {
+  justify-self: start;
+  max-width: 100%;
+  margin-top: var(--spacing-2);
+}
+
+.involvementLink {
+  justify-self: start;
 }
 
 @media (min-width: 1024px) {
   .introduction {
     grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--spacing-16);
+  }
+
+  .involvementStory {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
     gap: var(--spacing-16);
   }
 }

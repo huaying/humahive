@@ -1,21 +1,10 @@
-"use client";
-
 import Link from "next/link";
 import { Mail, Phone, MapPin, Linkedin, ArrowUp } from "lucide-react";
 import Image from "next/image";
 
 const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <footer
-      style={{
-        backgroundColor: "var(--orange-50)",
-        color: "var(--neutral-800)",
-      }}
-    >
+    <footer className="site-footer">
       <div className="container section-sm">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Organization Info */}
@@ -28,51 +17,40 @@ const Footer = () => {
                 height={384}
                 className="w-12"
               />
-              <span
-                className="heading-3"
-                style={{ color: "var(--neutral-800)" }}
-              >
+              <span className="heading-3">
                 HumAhive
               </span>
             </div>
 
-            <p
-              className="body-lg mb-8 max-w-sm"
-              style={{ color: "var(--neutral-600)" }}
-            >
+            <p className="body-lg mb-8 max-w-sm">
               Empowering vulnerable communities in Kakuma refugee camp through
               education, livelihood training, and social support.
             </p>
 
             <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <Mail size={20} style={{ color: "var(--orange-600)" }} />
+              <div className="footer-contact">
+                <Mail size={20} aria-hidden="true" />
                 <a
                   href="mailto:humanafricanhive@gmail.com"
-                  className="body-base hover:underline"
-                  style={{ color: "var(--neutral-700)" }}
+                  className="footer-link body-base"
                 >
                   humanafricanhive@gmail.com
                 </a>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <Phone size={20} style={{ color: "var(--orange-600)" }} />
+              <div className="footer-contact">
+                <Phone size={20} aria-hidden="true" />
                 <a
                   href="tel:+254708566780"
-                  className="body-base hover:underline"
-                  style={{ color: "var(--neutral-700)" }}
+                  className="footer-link body-base"
                 >
                   +254 708 566 780
                 </a>
               </div>
 
-              <div className="flex items-center space-x-4">
-                <MapPin size={20} style={{ color: "var(--orange-600)" }} />
-                <span
-                  className="body-base"
-                  style={{ color: "var(--neutral-700)" }}
-                >
+              <div className="footer-contact">
+                <MapPin size={20} aria-hidden="true" />
+                <span className="body-base">
                   Kakuma Refugee Camp, Turkana County, Kenya
                 </span>
               </div>
@@ -82,10 +60,7 @@ const Footer = () => {
           {/* Links & Social */}
           <div className="space-y-8">
             <div>
-              <h3
-                className="heading-4 mb-6"
-                style={{ color: "var(--neutral-800)" }}
-              >
+              <h3 className="heading-4 mb-6">
                 Quick Links
               </h3>
               <div className="grid grid-cols-2 gap-6">
@@ -93,8 +68,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/#programs"
-                      className="body-base hover:underline"
-                      style={{ color: "var(--neutral-700)" }}
+                      className="footer-link body-base"
                     >
                       Programs
                     </Link>
@@ -102,8 +76,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/#about"
-                      className="body-base hover:underline"
-                      style={{ color: "var(--neutral-700)" }}
+                      className="footer-link body-base"
                     >
                       About
                     </Link>
@@ -111,8 +84,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/#achievements"
-                      className="body-base hover:underline"
-                      style={{ color: "var(--neutral-700)" }}
+                      className="footer-link body-base"
                     >
                       Achievements
                     </Link>
@@ -122,8 +94,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/#get-involved"
-                      className="body-base hover:underline"
-                      style={{ color: "var(--neutral-700)" }}
+                      className="footer-link body-base"
                     >
                       Get Involved
                     </Link>
@@ -131,8 +102,7 @@ const Footer = () => {
                   <li>
                     <Link
                       href="/gallery"
-                      className="body-base hover:underline"
-                      style={{ color: "var(--neutral-700)" }}
+                      className="footer-link body-base"
                     >
                       Gallery
                     </Link>
@@ -142,21 +112,16 @@ const Footer = () => {
             </div>
 
             <div>
-              <h3
-                className="heading-4 mb-6"
-                style={{ color: "var(--neutral-800)" }}
-              >
+              <h3 className="heading-4 mb-6">
                 Get in Touch
               </h3>
               <div className="flex space-x-4">
                 <a
                   href="https://wa.me/254708566780"
+                  aria-label="Chat on WhatsApp (opens in a new tab)"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 border rounded-xl flex items-center justify-center transition-colors hover:bg-orange-100"
-                  style={{
-                    borderColor: "var(--orange-300)",
-                  }}
+                  className="icon-button"
                 >
                   <svg
                     width={24}
@@ -164,9 +129,7 @@ const Footer = () => {
                     className="w-6 h-6"
                     viewBox="0 0 30.667 30.667"
                     fill="currentColor"
-                    style={{ color: "var(--orange-600)" }}
-                    role="img"
-                    aria-label="WhatsApp"
+                    aria-hidden="true"
                   >
                     <path
                       d="M30.667,14.939c0,8.25-6.74,14.938-15.056,14.938c-2.639,0-5.118-0.675-7.276-1.857L0,30.667l2.717-8.017
@@ -185,15 +148,12 @@ const Footer = () => {
                 </a>
                 <a
                   href="https://www.linkedin.com/company/humahive"
+                  aria-label="HumAhive on LinkedIn (opens in a new tab)"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 border rounded-xl flex items-center justify-center transition-colors hover:bg-orange-100"
-                  style={{
-                    borderColor: "var(--orange-300)",
-                    color: "var(--orange-600)",
-                  }}
+                  className="icon-button"
                 >
-                  <Linkedin size={24} />
+                  <Linkedin size={24} aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -201,26 +161,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div
-          className="mt-4 pt-4"
-          style={{ borderTop: "1px solid var(--orange-200)" }}
-        >
+        <div className="footer-bottom mt-4 pt-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p
-              className="body-sm mb-4 md:mb-0"
-              style={{ color: "var(--neutral-600)" }}
-            >
+            <p className="body-sm mb-4 md:mb-0">
               © {new Date().getFullYear()} HumAhive. All rights reserved.
             </p>
 
-            <button
-              onClick={scrollToTop}
-              className="flex items-center space-x-2 body-sm hover:underline"
-              style={{ color: "var(--neutral-600)" }}
+            <a
+              href="#top"
+              className="footer-link gap-2 body-sm"
             >
-              <ArrowUp size={16} />
+              <ArrowUp size={16} aria-hidden="true" />
               <span>Back to top</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>

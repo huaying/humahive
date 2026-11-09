@@ -28,14 +28,14 @@
   gap: var(--spacing-2);
   padding: var(--spacing-2) var(--spacing-3);
   border-radius: var(--radius-xl);
-  background: var(--color-neutral-900);
-  color: var(--color-neutral-0);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
   white-space: nowrap;
   font-size: var(--font-size-xs);
 }
 
 .videoPoster:hover .playButton {
-  background: var(--color-orange-900);
+  background: var(--color-primary-hover);
 }
 
 .video {
@@ -57,10 +57,4 @@
 
 .videoCaption h3 {
   margin-bottom: var(--spacing-2);
-}
-
-
-.videoPoster:focus-visible {
-  outline: 3px solid var(--color-orange-900);
-  outline-offset: 4px;
 }

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import VideoCard from "@/components/VideoCard";
-import { communityVideo } from "@/data/videos";
+import { communityVideo, yvonneVideo } from "@/data/videos";
 import { donationUrl } from "@/data/links";
 import Image from "next/image";
-import { Users, Heart, Globe, MapPin, Camera } from "lucide-react";
+import { Heart, Globe, MapPin, Camera } from "lucide-react";
 
 export default function Home() {
   return (
@@ -16,19 +16,13 @@ export default function Home() {
             {/* Left: Text Content */}
             <div className="space-y-8 md:pr-4 lg:pr-8">
               {/* Location Badge */}
-              <div
-                className="inline-flex items-center px-4 py-2 rounded-full body-sm font-medium"
-                style={{
-                  backgroundColor: "var(--orange-100)",
-                  color: "var(--orange-600)",
-                }}
-              >
+              <div className="badge">
                 <MapPin size={16} className="mr-2" />
                 Kakuma Refugee Camp, Kenya
               </div>
 
               {/* Main Title */}
-              <h1 className={`display-1 ${styles.heroTitle}`}>
+              <h1 className="display-1">
                 Education,
                 <br />
                 opportunity,
@@ -46,7 +40,7 @@ export default function Home() {
             {/* Right: Photo Gallery */}
             <div className="relative">
               {/* Main large image */}
-              <div className="w-full aspect-[20/9] rounded-2xl overflow-hidden relative">
+              <div className="w-full aspect-[20/9] media-rounded relative">
                 <Image
                   src="/images/gallery/campaign-group-01.jpg"
                   alt="Community members campaigning together against child marriage"
@@ -59,7 +53,7 @@ export default function Home() {
 
               {/* Bottom two smaller images */}
               <div className="grid grid-cols-2 gap-4 mt-4">
-                <div className="w-full aspect-[20/9] rounded-2xl overflow-hidden relative">
+                <div className="w-full aspect-[20/9] media-rounded relative">
                   <Image
                     src="/images/gallery/school-community-01.jpg"
                     alt="Schoolchildren gathered in front of a HumAhive banner"
@@ -69,7 +63,7 @@ export default function Home() {
                   />
                 </div>
 
-                <div className="w-full aspect-[20/9] rounded-2xl overflow-hidden relative">
+                <div className="w-full aspect-[20/9] media-rounded relative">
                   <Image
                     src="/images/gallery/campaign-participant-02.jpg"
                     alt="A young participant displaying a campaign marker"
@@ -83,7 +77,7 @@ export default function Home() {
               {/* Floating accent element */}
               <div
                 className="absolute -bottom-3 left-6 w-12 h-12 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: "var(--orange-200)" }}
+                style={{ backgroundColor: "var(--color-background-emphasis)" }}
               >
                 <Heart
                   size={16}
@@ -184,7 +178,7 @@ export default function Home() {
             ].map((program, index) => {
               return (
                 <div key={index} className="space-y-6">
-                  <div className="image-card rounded-2xl overflow-hidden relative">
+                  <div className="image-card media-rounded relative">
                     <Image
                       src={`/images/${program.image}`}
                       alt={program.title}
@@ -199,7 +193,7 @@ export default function Home() {
                     <p className="body-base mb-4">{program.description}</p>
 
                     <div>
-                      <span className="body-md font-medium text-primary">
+                      <span className="body-base font-medium text-primary">
                         {program.participants}
                       </span>
                     </div>
@@ -227,16 +221,10 @@ export default function Home() {
                 education, skills, and dignity.
               </p>
 
-              <div
-                className="p-8 rounded-lg"
-                style={{
-                  borderLeft: "4px solid var(--color-primary)",
-                  backgroundColor: "var(--orange-50)",
-                }}
-              >
+              <div className="mission-card p-8">
                 <div className="flex items-center mb-4 gap-2">
                   <Heart size={32} style={{ color: "var(--color-primary)" }} />
-                  <h4 className="heading-3">Our Mission</h4>
+                  <h3 className="heading-3">Our Mission</h3>
                 </div>
                 <p className="body-base">
                   To empower vulnerable individuals in refugee and marginalized
@@ -246,16 +234,10 @@ export default function Home() {
                 </p>
               </div>
 
-              <div
-                className="p-8 rounded-lg"
-                style={{
-                  borderLeft: "4px solid var(--color-primary)",
-                  backgroundColor: "var(--orange-50)",
-                }}
-              >
+              <div className="mission-card p-8">
                 <div className="flex items-center mb-4 gap-2">
                   <Globe size={32} style={{ color: "var(--color-primary)" }} />
-                  <h4 className="heading-3">Our Vision</h4>
+                  <h3 className="heading-3">Our Vision</h3>
                 </div>
                 <p className="body-base">
                   A future where all people — regardless of their circumstances
@@ -267,7 +249,7 @@ export default function Home() {
 
             {/* Right: Stats */}
             <div className="space-y-8">
-              <div className="w-full h-80 rounded-2xl overflow-hidden relative">
+              <div className="w-full h-80 media-rounded relative">
                 <Image
                   src="/images/volunteers-01.jpg"
                   alt="Our Community - Lives Impacted"
@@ -280,7 +262,7 @@ export default function Home() {
                 <div className="text-center p-6">
                   <div
                     className="text-5xl font-bold mb-2"
-                    style={{ color: "var(--orange-700)" }}
+                    style={{ color: "var(--color-primary-text)" }}
                   >
                     750+
                   </div>
@@ -290,7 +272,7 @@ export default function Home() {
                   <div className="text-center p-4">
                     <div
                       className="text-4xl font-bold mb-2"
-                      style={{ color: "var(--orange-600)" }}
+                      style={{ color: "var(--color-primary-text)" }}
                     >
                       300+
                     </div>
@@ -299,7 +281,7 @@ export default function Home() {
                   <div className="text-center p-4">
                     <div
                       className="text-4xl font-bold mb-2"
-                      style={{ color: "var(--orange-600)" }}
+                      style={{ color: "var(--color-primary-text)" }}
                     >
                       450+
                     </div>
@@ -384,91 +366,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Get Involved Section */}
-      <section id="get-involved" className="section bg-soft">
-        <div className="container">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="display-2 mb-8">Get Involved</h2>
-              <p className="body-xl max-w-3xl mx-auto">
-                HumAhive thrives on the support of individuals and organizations
-                who share our vision. Together, we can create lasting change for
-                vulnerable and marginalized communities.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              <div className="text-center space-y-6">
-                <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto"
-                  style={{ backgroundColor: "var(--orange-100)" }}
-                >
-                  <Users size={40} style={{ color: "var(--orange-600)" }} />
-                </div>
-                <div>
-                  <h3 className="heading-2 mb-4">Volunteer</h3>
-                  <p className="body-base">
-                    Share your skills and time to support our programs.
-                  </p>
-                </div>
-              </div>
-
-              <div className="text-center space-y-6">
-                <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto"
-                  style={{ backgroundColor: "var(--orange-100)" }}
-                >
-                  <Globe size={40} style={{ color: "var(--orange-600)" }} />
-                </div>
-                <div>
-                  <h3 className="heading-2 mb-4">Partner</h3>
-                  <p className="body-base">
-                    Collaborate with us on projects and outreach.
-                  </p>
-                </div>
-              </div>
-
-              <div className="text-center space-y-6">
-                <div
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto"
-                  style={{ backgroundColor: "var(--orange-100)" }}
-                >
-                  <Heart size={40} style={{ color: "var(--orange-600)" }} />
-                </div>
-                <div>
-                  <h3 className="heading-2 mb-4">Donate</h3>
-                  <p className="body-base">
-                    Support English teachers in Kakuma with classroom supplies
-                    through GoFundMe.
-                  </p>
-                  <a
-                    href={donationUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Donate on GoFundMe (opens in a new tab)"
-                    className="btn btn-primary btn-sm mt-6"
-                  >
-                    Donate on GoFundMe
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <p className="body-lg font-medium mb-6 text-primary-dark">
-                Interested in volunteering, partnering, or contributing in-kind?
-              </p>
-              <a
-                href="mailto:humanafricanhive@gmail.com?subject=Get Involved with HumAhive"
-                className="btn btn-secondary btn-lg"
-              >
-                Contact Us
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <section className="section">
         <div className="container">
@@ -480,14 +377,14 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
               {/* Testimonial 1 */}
               <div
-                className="p-8 rounded-3xl relative"
-                style={{ backgroundColor: "var(--orange-50)" }}
+                className="p-8 quote-card relative"
+                style={{ backgroundColor: "var(--color-background-soft)" }}
               >
                 <div
                   className="absolute top-6 left-8 w-10 h-10 rounded-full flex items-center justify-center"
                   style={{ backgroundColor: "var(--color-primary)" }}
                 >
-                  <span className="text-white text-2xl font-bold">&quot;</span>
+                  <span aria-hidden="true" className="text-on-primary text-2xl font-bold">&quot;</span>
                 </div>
 
                 <div className="pt-10">
@@ -506,20 +403,20 @@ export default function Home() {
 
               {/* Testimonial 2 */}
               <div
-                className="p-8 rounded-3xl relative"
-                style={{ backgroundColor: "var(--orange-200)" }}
+                className="p-8 quote-card relative"
+                style={{ backgroundColor: "var(--color-background-emphasis)" }}
               >
                 <div
                   className="absolute top-6 left-8 w-10 h-10 rounded-full flex items-center justify-center"
-                  style={{ backgroundColor: "var(--orange-500)" }}
+                  style={{ backgroundColor: "var(--color-primary)" }}
                 >
-                  <span className="text-white text-2xl font-bold">&quot;</span>
+                  <span aria-hidden="true" className="text-on-primary text-2xl font-bold">&quot;</span>
                 </div>
 
                 <div className="pt-10">
                   <p
                     className="body-lg mb-2 leading-relaxed"
-                    style={{ color: "var(--orange-800)" }}
+                    style={{ color: "var(--color-primary-text)" }}
                   >
                     The training I received helped me start a small business and
                     support my family.
@@ -528,7 +425,7 @@ export default function Home() {
                   <div>
                     <p
                       className="body-sm font-semibold"
-                      style={{ color: "var(--orange-800)" }}
+                      style={{ color: "var(--color-primary-text)" }}
                     >
                       Women&apos;s Livelihood Program Graduate
                     </p>
@@ -540,44 +437,57 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* Community Story and Get Involved */}
       <section
-        id="contact"
-        className="section"
-        style={{ backgroundColor: "var(--orange-100)" }}
+        id="get-involved"
+        className="section bg-soft"
+        aria-labelledby="get-involved-title"
       >
         <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2
-              className="display-2 mb-8"
-              style={{ color: "var(--orange-800)" }}
-            >
+          <header className={styles.involvementHeader}>
+            <p className={styles.involvementLabel}>Get Involved</p>
+            <h2 id="get-involved-title" className="display-2">
               Together, We Build Futures
             </h2>
-            <p
-              className="body-xl mb-12 max-w-2xl mx-auto"
-              style={{ color: "var(--orange-700)" }}
-            >
-              Help equip volunteer English teachers in Kakuma with the
-              classroom supplies they need.
-            </p>
+          </header>
 
-            <div className="flex flex-col md:flex-row gap-6 justify-center">
+          <div className={styles.involvementStory}>
+            <div className={styles.involvementFilm}>
+              <h3 className="heading-2">Meet Yvonne</h3>
+              <VideoCard video={yvonneVideo} showCaption={false} />
+              <p className="body-base">
+                Hear Yvonne speak in English about mentoring other women and
+                her hopes for the future.
+              </p>
+              <Link href="/gallery" className={`text-link ${styles.involvementLink}`}>
+                <Camera size={18} aria-hidden="true" />
+                More stories from our community
+              </Link>
+            </div>
+
+            <div className={styles.involvementAppeal}>
+              <h3 className="heading-2">Support English learning in Kakuma</h3>
+              <p className="body-lg">
+                Help volunteer English teachers provide women in Kakuma with
+                opportunities to learn, build confidence, and connect with others.
+              </p>
+              <p className="body-base">
+                The GoFundMe campaign helps provide classroom essentials such as
+                notebooks, pens, chalk, and blackboards.
+              </p>
               <a
                 href={donationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Donate on GoFundMe (opens in a new tab)"
-                className="btn btn-lg btn-primary"
+                className={"btn btn-primary " + styles.donationButton}
               >
                 Donate on GoFundMe
               </a>
-              <Link href="/gallery" className="btn btn-secondary btn-lg">
-                <Camera size={20} className="mr-2" />
-                View Our Work
-              </Link>
+              <p className="body-sm">View the campaign and donate on GoFundMe.</p>
             </div>
           </div>
+
         </div>
       </section>
     </div>

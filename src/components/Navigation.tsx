@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
@@ -9,6 +10,8 @@ import { donationUrl } from "@/data/links";
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
 
   const navItems = [
     { href: "/#programs", label: "Programs" },
@@ -23,9 +26,30 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const handleDesktop = () => {
+      if (desktop.matches) setIsMenuOpen(false);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    desktop.addEventListener("change", handleDesktop);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      desktop.removeEventListener("change", handleDesktop);
+    };
+  }, [isMenuOpen]);
 
   const handleNavClick = () => {
     // Let browser handle navigation naturally for /#anchor links
@@ -34,7 +58,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`nav ${isScrolled ? "nav-scrolled" : ""}`}>
+    <nav aria-label="Main navigation" className={`nav ${isScrolled ? "nav-scrolled" : ""}`}>
       <div className="container">
         <div className="nav-content">
           {/* Logo */}
@@ -50,13 +74,14 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2 lg:gap-3">
+          <div className="hidden lg:flex items-center gap-3">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={handleNavClick}
                 className="nav-link"
+                aria-current={item.href === pathname ? "page" : undefined}
               >
                 {item.label}
               </Link>
@@ -64,13 +89,13 @@ const Navigation = () => {
           </div>
 
           {/* Donation Button */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <a
               href={donationUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Donate on GoFundMe (opens in a new tab)"
-              className="btn btn-primary btn-sm nav-support-btn"
+              className="btn btn-primary btn-sm"
             >
               Donate
             </a>
@@ -78,21 +103,23 @@ const Navigation = () => {
 
           {/* Mobile menu button */}
           <button
+            ref={menuButtonRef}
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
-            className="md:hidden p-2"
-            style={{ color: "var(--color-text-secondary)" }}
+            aria-controls="mobile-navigation"
+            className="icon-button lg:hidden"
           >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div
-            className="md:hidden absolute top-20 left-0 right-0 shadow-lg"
-            style={{ backgroundColor: "var(--color-background)" }}
+            id="mobile-navigation"
+            className="nav-mobile lg:hidden"
           >
             <div className="container py-8">
               <div className="space-y-6">
@@ -101,8 +128,8 @@ const Navigation = () => {
                     key={item.href}
                     href={item.href}
                     onClick={handleNavClick}
-                    className="block body-base py-2"
-                    style={{ color: "var(--color-text-secondary)" }}
+                    className="nav-link"
+                    aria-current={item.href === pathname ? "page" : undefined}
                   >
                     {item.label}
                   </Link>
